@@ -121,4 +121,7 @@ class TestBase32 < Minitest::Test
     Base32.table = Base32::TABLE # so as not to ruin other tests
   end
 
+  def test_random_runeterra_deck_code
+    Base32.decode("CIBAIAIFB4WDANQIAEAQGDAUDAQSIJZUAIAQCAIEAEAQKBIA")
+  end
 end
