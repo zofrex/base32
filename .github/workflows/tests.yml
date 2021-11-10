@@ -11,6 +11,13 @@ jobs:
       matrix:
         ruby: ["3.0", "2.7", "2.6", "head", "jruby-9.3", "jruby-head", "truffleruby-20", "truffleruby-21", "truffleruby-head"]
         os: [ubuntu-latest, windows-latest]
+        exclude:
+          - os: windows-latest
+            ruby: truffleruby-20
+          - os: windows-latest
+            ruby: truffleruby-21
+          - os: windows-latest
+            ruby: truffleruby-head
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
