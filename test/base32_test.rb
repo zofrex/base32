@@ -122,6 +122,8 @@ class TestBase32 < Minitest::Test
   end
 
   def test_random_runeterra_deck_code
-    Base32.decode("CIBAIAIFB4WDANQIAEAQGDAUDAQSIJZUAIAQCAIEAEAQKBIA")
+    data = Base32.decode("CIBAIAIFB4WDANQIAEAQGDAUDAQSIJZUAIAQCAIEAEAQKBIA")
+    expected = "\x12\x02\x04\x01\x05\x0F,06\b\x01\x01\x03\f\x14\x18!$'4\x02\x01\x01\x01\x04\x01\x01\x05\x05\x00"
+    assert_equal(expected, data)
   end
 end
